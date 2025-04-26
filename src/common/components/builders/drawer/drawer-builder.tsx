@@ -2,15 +2,15 @@
 
 import { IconSquareX } from "@tabler/icons-react";
 
-import { cn } from "@/lib/utils";
-import { useDrawerStore } from "@/lib/stores/use-drawer-store";
+import { cn } from "@/common/lib/utils";
+import { useDrawerStore } from "@/common/lib/store/use-drawer-store";
 import {
   DrawerClose,
   DrawerContent,
   DrawerDescription,
   DrawerHeader,
   DrawerTitle,
-} from "@/components/ui/drawer";
+} from "@/common/components/ui/drawer";
 
 interface IProps {
   width?: string;
@@ -20,11 +20,7 @@ interface IProps {
   children?: React.ReactNode;
 }
 
-export const DrawerViews = ({
-  onClose,
-  children,
-  width = "sm:w-[500px]",
-}: IProps) => {
+export const DrawerViews = ({ children, width = "sm:w-[500px]" }: IProps) => {
   const { dataDrawer, toggleDrawer } = useDrawerStore();
 
   return (
@@ -41,8 +37,6 @@ export const DrawerViews = ({
               <IconSquareX
                 onClick={() => {
                   toggleDrawer();
-
-                  onClose && onClose();
                 }}
                 size={30}
                 className="cursor-pointer dark:hover:text-white hover:text-black text-gray-400"

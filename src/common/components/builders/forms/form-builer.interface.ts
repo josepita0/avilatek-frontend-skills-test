@@ -12,7 +12,7 @@ interface IInput<T> {
   placeholder?: string;
   disabled?: boolean;
   isLoading?: boolean;
-  [key: string]: any;
+  [key: string]: boolean | string | number | NestedKeyOf<T> | undefined;
 }
 
 interface ISections<T> {

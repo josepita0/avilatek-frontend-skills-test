@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { FieldValues, Resolver, useForm } from "react-hook-form";
+import { FieldValues, useForm } from "react-hook-form";
 
 interface IProps {
   schema: z.AnyZodObject | z.ZodEffects<z.AnyZodObject>;

@@ -13,7 +13,9 @@ interface IProps {
   id: string;
   label: string;
   form: UseFormReturn;
-  fieldConfig: {};
+  fieldConfig: {
+    [key: string]: string | number | boolean | undefined;
+  };
   Field: React.ElementType;
 }
 export const FormFieldBuilder = ({
