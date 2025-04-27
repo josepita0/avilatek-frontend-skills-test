@@ -1,6 +1,6 @@
 import am5index from "@amcharts/amcharts5/index";
-import am5xy from "@amcharts/amcharts5/xy";
-import am5radar from "@amcharts/amcharts5/radar";
+import * as am5xy from "@amcharts/amcharts5/xy";
+import * as am5radar from "@amcharts/amcharts5/radar";
 import am5percent from "@amcharts/amcharts5/percent";
 import am5map from "@amcharts/amcharts5/map";
 import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
