@@ -27,7 +27,7 @@ export const TitleSection = ({title, badge, description}: ITittleSectionProps) =
           description && (
             <div className="w-1/2 text-center">
               <Label className="text-zinc-500">
-                Connect your tools, connect your teams. With over 100 apps already available in our directory, your team’s favourite tools are just a click away.
+                {description ?? 'Connect your tools, connect your teams. With over 100 apps already available in our directory, your team’s favourite tools are just a click away.'}
               </Label>
             </div>
           )
