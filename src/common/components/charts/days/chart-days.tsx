@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { am5, am5themes_Animated, am5xy } from "@/common/lib/utils/amchart";
+import { Card } from "../../ui/card";
 
 /* Chart code */
 const mainColor = am5.color(0x7F56D9);
@@ -157,9 +158,13 @@ const ChartDays = () => {
   }, []); // Empty dependency array means this effect runs once on mount
 
   return (
-    <div id="chartdiv">
-      <div id="linediv" style={{ width: "100%", height: "250px" }}></div>
-    </div>
+    
+    <Card className="p-2 w-full">
+        <div id="chartdiv h-full w-full">
+          <div id="linediv" style={{ width: "100%", height: "250px" }}></div>
+        </div>
+
+    </Card>
   );
 };
 

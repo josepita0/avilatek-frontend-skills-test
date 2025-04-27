@@ -13,14 +13,9 @@ const ChartDays = dynamic(() => import("../charts/days/chart-days"), {
 
 export const ChartsComponent = () => {
   return (
-    <div className="relative">
 
-      <div className="w-[50rem] h-96 relative">
+      <div className="w-[50rem]  relative flex items-center">
           <ChartDays />  
       </div>
-        {/* <div className="absolute w-full h-full bottom-0 -right-7 ">
-            <ChartUsers />
-        </div> */}
-    </div>
   );
 };
