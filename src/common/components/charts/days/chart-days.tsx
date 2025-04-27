@@ -2,23 +2,25 @@ import { useEffect } from "react";
 import { am5, am5themes_Animated, am5xy } from "@/common/lib/utils/amchart";
 
 /* Chart code */
-const mainColor = am5.color(0xc83830);
+const mainColor = am5.color(0x7F56D9);
 const secondaryColor = am5.color(0xd9cec8);
 
 const ChartDays = () => {
   useEffect(() => {
     // Create root element
-    let root = am5.Root.new("linediv");
+    const root = am5.Root.new("linediv");
 
-    let myTheme = am5.Theme.new(root);
+    const myTheme = am5.Theme.new(root);
     myTheme.rule("Label").setAll({
       fontSize: "0.8em",
     });
 
+    root._logo?.dispose()
+
     root.setThemes([am5themes_Animated.new(root), myTheme]);
 
     // Create chart
-    let chart = root.container.children.push(
+    const chart = root.container.children.push(
       am5xy.XYChart.new(root, {
         panX: false,
         panY: false,
@@ -29,7 +31,7 @@ const ChartDays = () => {
       })
     );
 
-    let data = [
+    const data = [
       {
         year: "2021",
         income: 18.5,
@@ -68,11 +70,11 @@ const ChartDays = () => {
     ];
 
     // Create axes
-    let xRenderer = am5xy.AxisRendererX.new(root, {
+    const xRenderer = am5xy.AxisRendererX.new(root, {
       minorGridEnabled: true,
       minGridDistance: 60,
     });
-    let xAxis = chart.xAxes.push(
+    const xAxis = chart.xAxes.push(
       am5xy.CategoryAxis.new(root, {
         categoryField: "year",
         renderer: xRenderer,
@@ -85,7 +87,7 @@ const ChartDays = () => {
 
     xAxis.data.setAll(data);
 
-    let yAxis = chart.yAxes.push(
+    const yAxis = chart.yAxes.push(
       am5xy.ValueAxis.new(root, {
         min: 0,
         extraMax: 0.1,
@@ -96,7 +98,7 @@ const ChartDays = () => {
     );
 
     // Add series
-    let series1 = chart.series.push(
+    const series1 = chart.series.push(
       am5xy.LineSeries.new(root, {
         name: "Income",
         xAxis: xAxis,
@@ -118,7 +120,7 @@ const ChartDays = () => {
       templateField: "strokeSettings",
     });
 
-    let series2 = chart.series.push(
+    const series2 = chart.series.push(
       am5xy.LineSeries.new(root, {
         name: "Expenses",
         xAxis: xAxis,
@@ -156,7 +158,7 @@ const ChartDays = () => {
 
   return (
     <div id="chartdiv">
-      <div id="linediv" style={{ width: "100%", height: "500px" }}></div>
+      <div id="linediv" style={{ width: "100%", height: "250px" }}></div>
     </div>
   );
 };

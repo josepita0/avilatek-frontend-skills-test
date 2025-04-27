@@ -1,5 +1,12 @@
-import { ChartsComponent } from "@/common/components/charts/chart";
+import { InfoCard } from "@/common/components/info-card";
+import { ToolsSection } from "@/common/components/tools";
 
 export const InfoComponent = () => {
-  return <ChartsComponent />;
+  return (
+    <div className="flex flex-col w-full p-10 gap-8">
+      <InfoCard/>
+
+      <ToolsSection/>
+    </div>
+  )
 };

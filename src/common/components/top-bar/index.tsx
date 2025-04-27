@@ -50,58 +50,60 @@ export const TopBar = () => {
 
 
     return (
-      <div className="flex justify-between items-center gap-2">
-        <NavigationMenu>
-          <NavigationMenuList>
+      <div className="flex xl:flex-row  justify-between items-center">
+        <div className="flex justify-between items-center gap-2 ">
+          <NavigationMenu>
+            <NavigationMenuList>
 
-            {
+              {
 
-              itemsNavigation.map((item) => {
-                return (
-                  <>
-                    {
-                      item.href ? (
-                        <NavigationMenuItem key={item.title}>
-                          <Link href={item.href as string} legacyBehavior passHref>
-                            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                              {item.title}
-                            </NavigationMenuLink>
-                          </Link>
-                        </NavigationMenuItem>
-                      ) : (
+                itemsNavigation.map((item) => {
+                  return (
+                    <>
+                      {
+                        item.href ? (
+                          <NavigationMenuItem key={item.title}>
+                            <Link href={item.href as string} legacyBehavior passHref>
+                              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                                {item.title}
+                              </NavigationMenuLink>
+                            </Link>
+                          </NavigationMenuItem>
+                        ) : (
 
-                        <NavigationMenuItem>
-                          <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
-                          <NavigationMenuContent>
-                            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-1 lg:w-[600px] ">
-                              {item?.subContent?.map((component) => (
-                                <ListItem
-                                  icon={component.icon}
-                                  key={component.title}
-                                  title={component.title}
-                                  href={component.href}
-                                  description={component.description}
-                                />
-                              ))}
-                            </ul>
-                            
-                          </NavigationMenuContent>
-                        </NavigationMenuItem>
-                      )
-                    }
+                          <NavigationMenuItem>
+                            <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
+                            <NavigationMenuContent>
+                              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-1 lg:w-[600px] ">
+                                {item?.subContent?.map((component) => (
+                                  <ListItem
+                                    icon={component.icon}
+                                    key={component.title}
+                                    title={component.title}
+                                    href={component.href}
+                                    description={component.description}
+                                  />
+                                ))}
+                              </ul>
 
-                  </>
-                )
-              })
-            }
-          </NavigationMenuList>
-        </NavigationMenu>
+                            </NavigationMenuContent>
+                          </NavigationMenuItem>
+                        )
+                      }
+
+                    </>
+                  )
+                })
+              }
+            </NavigationMenuList>
+          </NavigationMenu>
+        </div>
 
         <div className="flex gap-2">
-
-        <Button variant={"ghost"} >Log in</Button>
-        <Button className="bg-primary">Sign up</Button>
+          <Button variant={"ghost"} >Log in</Button>
+          <Button className="bg-primary">Sign up</Button>
         </div>
+
       </div>
     )
 }

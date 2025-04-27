@@ -7,8 +7,7 @@ import {
 } from "@/common/lib/utils/amchart";
 
 /* Chart code */
-const mainColor = am5.color(0xc83830);
-const secondaryColor = am5.color(0xd9cec8);
+const mainColor = am5.color(0x7F56D9);
 
 const ChartActiveUsers = () => {
   useEffect(() => {
@@ -16,17 +15,13 @@ const ChartActiveUsers = () => {
       "europe",
       "asia",
       "northAmerica",
-      "southAmerica",
-      "oceania",
-      "africa",
+     
     ];
     const continentNames: Record<string, string> = {
       europe: "Europe",
       asia: "Asia",
       northAmerica: "North America",
-      southAmerica: "South America",
-      oceania: "Oceania",
-      africa: "Africa",
+      
     };
 
     // Create root element
@@ -153,7 +148,7 @@ const ChartActiveUsers = () => {
 
   return (
     <div id="chartdiv">
-      <div id="gaugediv" style={{ width: "100%", height: "500px" }}></div>
+      <div id="gaugediv" style={{ width: "100%", height: "250px" }}></div>
     </div>
   );
 };

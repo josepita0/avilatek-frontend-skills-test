@@ -3,7 +3,7 @@ import type { AppProps } from "next/app";
 import { ThemeProvider } from "next-themes";
 
 import { Public_Sans } from "next/font/google";
-import { ReactElement, ReactNode } from "react";
+import { ReactElement, ReactNode, useEffect, useState } from "react";
 import { NextPage } from "next";
 
 const publicF = Public_Sans({ subsets: ["latin"] });
@@ -17,6 +17,14 @@ type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout
 }
 export default function App({ Component, pageProps }: AppPropsWithLayout) {
+
+  
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => setIsClient(true), []);
+
+  if (!isClient) return null;
+
 
   const getLayout = Component.getLayout ?? ((page) => page)
 
