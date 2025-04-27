@@ -1,3 +1,4 @@
+import { AnaliticSection } from "@/common/components/analitics-section";
 import { CounterSection } from "@/common/components/counters";
 import { InfoCard } from "@/common/components/info-card";
 import { ToolsSection } from "@/common/components/tools";
@@ -10,6 +11,8 @@ export const InfoComponent = () => {
       <ToolsSection/>
       
       <CounterSection/>
+
+      <AnaliticSection/>
 
     </div>
   )
