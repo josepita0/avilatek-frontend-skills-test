@@ -5,7 +5,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/common/components/ui/form";
-import { cn } from "@/common/lib/utils";
+import { cn } from "@/common/lib/utils/tailwind-utils";
 
 import { UseFormReturn } from "react-hook-form";
 

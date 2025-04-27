@@ -1,4 +1,4 @@
-import { cn } from "@/common/lib/utils";
+import { cn } from "@/common/lib/utils/tailwind-utils";
 
 import { Form } from "@/common/components/ui/form";
 import { Button } from "@/common/components/ui/button";

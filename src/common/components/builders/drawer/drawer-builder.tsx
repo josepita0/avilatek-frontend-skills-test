@@ -2,7 +2,7 @@
 
 import { IconSquareX } from "@tabler/icons-react";
 
-import { cn } from "@/common/lib/utils";
+import { cn } from "@/common/lib/utils/tailwind-utils";
 import { useDrawerStore } from "@/common/lib/store/use-drawer-store";
 import {
   DrawerClose,
